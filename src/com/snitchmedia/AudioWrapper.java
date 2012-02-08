@@ -1,10 +1,8 @@
-package com.example;
+package com.snitchmedia;
 
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Environment;
-
-import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;

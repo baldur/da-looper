@@ -1,4 +1,4 @@
-package com.example;
+package com.snitchmedia;
 
 import android.app.Activity;
 import android.os.Bundle;
