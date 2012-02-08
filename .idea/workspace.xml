@@ -16,11 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84e631a4-cb7e-43a8-847b-fb6c140fb5a1" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/gen/com/example/R.java" afterPath="$PROJECT_DIR$/gen/com/snitchmedia/R.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/example/AudioWrapper.java" afterPath="$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/example/RecorderActivity.java" afterPath="$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java" afterPath="$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java" />
     </list>
     <list id="d7892a8b-01a3-445c-bacd-2d43ff4c07b2" name="Rejected commit: Default" comment="initial" />
     <ignored path="looper.iws" />
@@ -83,7 +80,7 @@
       <file leaf-file-name="RecorderActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="89" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.8961039">
+            <state line="59" column="44" selection-start="1893" selection-end="1893" vertical-scroll-proportion="0.3738532">
               <folding />
             </state>
           </provider>
@@ -92,7 +89,7 @@
       <file leaf-file-name="AudioWrapper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="16" selection-start="12" selection-end="23" vertical-scroll-proportion="0.0">
+            <state line="50" column="16" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -176,7 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/MyRecorder.java" />
         <option value="$PROJECT_DIR$/src/com/looper/Recorder.java" />
         <option value="$PROJECT_DIR$/src/com/looper/RecordingActivity.java" />
         <option value="$PROJECT_DIR$/src/com/looper/RecorderActivity.java" />
@@ -192,6 +188,7 @@
         <option value="$PROJECT_DIR$/src/com/example/AudioWrapper.java" />
         <option value="$PROJECT_DIR$/src/com/example/RecorderActivity.java" />
         <option value="$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java" />
+        <option value="$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java" />
       </list>
     </option>
   </component>
@@ -715,12 +712,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="12" selection-end="23" vertical-scroll-proportion="0.0" />
+        <state line="50" column="16" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="89" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.8961039">
+        <state line="59" column="44" selection-start="1893" selection-end="1893" vertical-scroll-proportion="0.3738532">
           <folding />
         </state>
       </provider>

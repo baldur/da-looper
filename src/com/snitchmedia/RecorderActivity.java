@@ -1,14 +1,14 @@
 package com.snitchmedia;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TableLayout;
 import android.widget.ToggleButton;
-import android.view.LayoutInflater;
-import android.content.Context;
 
 import java.io.IOException;
 import java.util.Timer;
@@ -20,22 +20,24 @@ public class RecorderActivity extends Activity {
     private String[] fileNames = {"first_file", "second_file", "third_file", "forth_file"};
     private AudioWrapper[] audioDevices = new AudioWrapper[4];
 
-    private void startRecording() {
-        Log.v(TAG, "start recording" + fileNames[recordCount]);
-        if(recordCount > 4) {
-            return;
+    private boolean startRecording() {
+        if(recordCount >= 4) {
+            Log.v(TAG, "start recording" + fileNames[recordCount]);
+            return false;
         }
         audioDevices[recordCount] = new AudioWrapper(fileNames[recordCount]);
         try {
             audioDevices[recordCount].record();
+            return true;
         } catch (IOException e) {
-
+            return false;
         }
     }
 
     private void stopRecording() {
         try {
              Log.v(TAG, "stop recording" + fileNames[recordCount]);
+             Log.v(TAG, "stop recording" + recordCount);
              audioDevices[recordCount].stop();
              recordCount++;
         } catch (IOException e) {
@@ -54,7 +56,9 @@ public class RecorderActivity extends Activity {
                 ToggleButton btn = (ToggleButton)v;
                 if (btn.isChecked()) {
                     Log.v(TAG, "start recording fork");
-                    startRecording();
+                    if(!startRecording()) {
+                        btn.setChecked(false);
+                    }
                 } else {
                     Log.v(TAG, "stop recording fork");
                     addRow(recordCount);
