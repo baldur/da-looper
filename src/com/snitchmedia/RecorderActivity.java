@@ -93,12 +93,12 @@ public class RecorderActivity extends Activity {
                                     public void run() {
                                         float duration = (float)audioDevices[track].getDuration();
                                         float position = (float)audioDevices[track].getCurrentPosition();
-                                        int percent = Math.round(position/duration) * 100;
+                                        int percent = Math.round(position/duration * 100);
                                         Log.v(TAG, "Tick Tack" + percent);
                                         seekBar.setProgress(percent);
                                     }
                                 };
-                                t.schedule(tt, 500);
+                                t.schedule(tt, 100, 100);
                             } catch (IOException e) {
                             }
                         } else {
