@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TableLayout;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.io.IOException;
@@ -56,6 +57,7 @@ public class RecorderActivity extends Activity {
                 if (btn.isChecked()) {
                     Log.v(TAG, "start recording fork");
                     if(recordCount >= 4) {
+                        Toast.makeText(getApplicationContext(), "Only supports 4 tracks.", Toast.LENGTH_SHORT).show();
                         btn.setChecked(false);
                         return;
                     } else {
