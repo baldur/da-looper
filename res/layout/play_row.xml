@@ -6,4 +6,7 @@
     <ToggleButton
             style="@style/PlayButton" />
     <ProgressBar style="@style/SeekBar" />
+    <ToggleButton
+            style="@style/MuteButton"
+            />
 </TableRow>

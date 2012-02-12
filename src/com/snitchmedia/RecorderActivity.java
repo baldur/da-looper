@@ -112,6 +112,20 @@ public class RecorderActivity extends Activity {
                     }
                 }
         );
+
+        ToggleButton muteBtn = (ToggleButton)container.findViewWithTag("unused mute button");
+        muteBtn.setTag(track);
+        muteBtn.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ToggleButton btn = (ToggleButton) v;
+                        int track = ((Number) btn.getTag()).intValue();
+                        audioDevices[track].toggleMute();
+                    }
+                }
+        );
+
     }
 
     @Override

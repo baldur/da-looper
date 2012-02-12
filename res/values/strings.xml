@@ -32,12 +32,21 @@
         <item name="android:tag">unused</item>
         <item name="android:background">@drawable/play_button</item>
     </style>
+    <style name="MuteButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:tag">unused mute button</item>
+        <item name="android:textOff">mute</item>
+        <item name="android:textOn">muted</item>
+    </style>
     <style name="SeekBar" parent="@android:style/Widget.ProgressBar.Horizontal">
         <item name="android:layout_marginRight">5dp</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">18dp</item>
-        <item name="android:minWidth">210dp</item>
+        <item name="android:minWidth">160dp</item>
         <item name="android:tag">unused progressbar</item>
     </style>
 </resources>

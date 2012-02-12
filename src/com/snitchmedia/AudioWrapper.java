@@ -13,6 +13,7 @@ public class AudioWrapper {
     final MediaPlayer player = new MediaPlayer();
     final String path;
     private boolean firstPlay = true;
+    private float volume = 100.0F;
 
     /**
      * Creates a new audio recording at the given path (relative to root of SD card).
@@ -86,6 +87,13 @@ public class AudioWrapper {
     
     public int getCurrentPosition() {
         return player.getCurrentPosition();
+    }
+
+    public void toggleMute() {
+        volume = volume > 0 ? 0.0F : 100.0F;
+        if(player.isPlaying()) {
+            player.setVolume(volume, volume);
+        }
     }
 
     public void pause() {
