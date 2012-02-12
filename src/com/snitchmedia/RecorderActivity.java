@@ -2,6 +2,7 @@ package com.snitchmedia;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,14 +17,12 @@ import java.util.TimerTask;
 
 public class RecorderActivity extends Activity {
     private String TAG = "Looper#RecorderActivity";
+    private ToggleButton recordBtn;
     private int recordCount = 0;
     private String[] fileNames = {"first_file", "second_file", "third_file", "forth_file"};
     private AudioWrapper[] audioDevices = new AudioWrapper[4];
 
     private boolean startRecording() {
-       if(recordCount >= 4) {
-            return false;
-        }
         Log.v(TAG, "start recording" + fileNames[recordCount]);
         audioDevices[recordCount] = new AudioWrapper(fileNames[recordCount]);
         try {
@@ -56,8 +55,11 @@ public class RecorderActivity extends Activity {
                 ToggleButton btn = (ToggleButton)v;
                 if (btn.isChecked()) {
                     Log.v(TAG, "start recording fork");
-                    if(!startRecording()) {
+                    if(recordCount >= 4) {
                         btn.setChecked(false);
+                        return;
+                    } else {
+                        new InitiateRecording().execute("recording");
                     }
                 } else {
                     Log.v(TAG, "stop recording fork");
@@ -67,7 +69,7 @@ public class RecorderActivity extends Activity {
             }
         };
 
-        ToggleButton recordBtn = (ToggleButton)findViewById(R.id.record_btn);
+        recordBtn = (ToggleButton)findViewById(R.id.record_btn);
         recordBtn.setOnClickListener(recClicker);
     }
 
@@ -114,6 +116,18 @@ public class RecorderActivity extends Activity {
         super.onPause();
         if (audioDevices != null) {
             audioDevices = null;
+        }
+    }
+
+    private class InitiateRecording extends AsyncTask<String,String,String> {
+        @Override
+        public String doInBackground(String... track) {
+            startRecording();
+            return "foo";
+        }
+        @Override
+        protected void onPostExecute(String results) {
+            super.onPostExecute(results);
         }
     }
 }
