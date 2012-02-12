@@ -12,6 +12,7 @@ public class AudioWrapper {
     final MediaRecorder recorder = new MediaRecorder();
     final MediaPlayer player = new MediaPlayer();
     final String path;
+    private boolean firstPlay = true;
 
     /**
      * Creates a new audio recording at the given path (relative to root of SD card).
@@ -59,20 +60,23 @@ public class AudioWrapper {
     }
 
     public void play() throws IOException {
-        String state = android.os.Environment.getExternalStorageState();
-        if(!state.equals(android.os.Environment.MEDIA_MOUNTED))  {
-            throw new IOException("SD Card is not mounted.  It is " + state + ".");
-        }
+        if(firstPlay) {
+            String state = android.os.Environment.getExternalStorageState();
+            if(!state.equals(android.os.Environment.MEDIA_MOUNTED))  {
+                throw new IOException("SD Card is not mounted.  It is " + state + ".");
+            }
 
-        // make sure the directory we plan to store the recording in exists
-        File directory = new File(path).getParentFile();
-        if (!directory.exists() && !directory.mkdirs()) {
-            throw new IOException("Path to file could not be created.");
-        }
+            // make sure the directory we plan to store the recording in exists
+            File directory = new File(path).getParentFile();
+            if (!directory.exists() && !directory.mkdirs()) {
+                throw new IOException("Path to file could not be created.");
+            }
 
-        player.setDataSource(path);
-        player.setLooping(true);
-        player.prepare();
+            player.setDataSource(path);
+            player.setLooping(true);
+            player.prepare();
+            firstPlay = false;
+        }
         player.start();
     }
     
