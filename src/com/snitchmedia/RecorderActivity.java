@@ -21,10 +21,10 @@ public class RecorderActivity extends Activity {
     private AudioWrapper[] audioDevices = new AudioWrapper[4];
 
     private boolean startRecording() {
-        if(recordCount >= 4) {
-            Log.v(TAG, "start recording" + fileNames[recordCount]);
+       if(recordCount >= 4) {
             return false;
         }
+        Log.v(TAG, "start recording" + fileNames[recordCount]);
         audioDevices[recordCount] = new AudioWrapper(fileNames[recordCount]);
         try {
             audioDevices[recordCount].record();
