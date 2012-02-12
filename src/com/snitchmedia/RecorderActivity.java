@@ -59,6 +59,7 @@ public class RecorderActivity extends Activity {
                         btn.setChecked(false);
                         return;
                     } else {
+                        btn.setEnabled(false);
                         new InitiateRecording().execute("recording");
                     }
                 } else {
@@ -123,10 +124,11 @@ public class RecorderActivity extends Activity {
         @Override
         public String doInBackground(String... track) {
             startRecording();
-            return "foo";
+            return "sucess";
         }
         @Override
         protected void onPostExecute(String results) {
+            recordBtn.setEnabled(true);
             super.onPostExecute(results);
         }
     }
