@@ -2,6 +2,9 @@ package com.snitchmedia;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.media.SoundPool.OnLoadCompleteListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,10 +25,11 @@ public class RecorderActivity extends Activity {
     private int recordCount = 0;
     private String[] fileNames = {"first_file", "second_file", "third_file", "forth_file"};
     private AudioWrapper[] audioDevices = new AudioWrapper[4];
+    private SoundPool soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
 
     private boolean startRecording() {
         Log.v(TAG, "start recording" + fileNames[recordCount]);
-        audioDevices[recordCount] = new AudioWrapper(fileNames[recordCount]);
+        audioDevices[recordCount] = new AudioWrapper(fileNames[recordCount], soundPool);
         try {
             audioDevices[recordCount].record();
             return true;
@@ -47,6 +51,13 @@ public class RecorderActivity extends Activity {
 
     @Override
     public void onCreate(Bundle icicle) {
+        soundPool.setOnLoadCompleteListener(new OnLoadCompleteListener(){
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId,
+            int status) {
+                Log.v(TAG, "\n\n\n************\n\nloaded sample");
+            }
+        });
         super.onCreate(icicle);
         setContentView(R.layout.studio);
 
@@ -99,7 +110,7 @@ public class RecorderActivity extends Activity {
                                         float duration = (float)audioDevices[track].getDuration();
                                         float position = (float)audioDevices[track].getCurrentPosition();
                                         int percent = Math.round(position/duration * 100);
-                                        Log.v(TAG, "Tick Tack" + percent);
+                                        //Log.v(TAG, "Tick Tack" + percent);
                                         seekBar.setProgress(percent);
                                     }
                                 };
@@ -134,6 +145,12 @@ public class RecorderActivity extends Activity {
         if (audioDevices != null) {
             audioDevices = null;
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        soundPool.release();
     }
 
     private class InitiateRecording extends AsyncTask<String,String,String> {

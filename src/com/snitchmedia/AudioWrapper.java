@@ -1,7 +1,7 @@
 package com.snitchmedia;
 
-import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.media.SoundPool;
 import android.os.Environment;
 
 import java.io.File;
@@ -10,16 +10,19 @@ import java.io.IOException;
 public class AudioWrapper {
 
     final MediaRecorder recorder = new MediaRecorder();
-    final MediaPlayer player = new MediaPlayer();
+    private int soundId;
+    final SoundPool soundpool;
     final String path;
+    private int streamId = 0;
     private boolean firstPlay = true;
     private float volume = 100.0F;
 
     /**
      * Creates a new audio recording at the given path (relative to root of SD card).
      */
-    public AudioWrapper(String path) {
+    public AudioWrapper(String path, SoundPool soundPool) {
         this.path = sanitizePath(path);
+        this.soundpool = soundPool;
     }
 
     private String sanitizePath(String path) {
@@ -58,46 +61,31 @@ public class AudioWrapper {
     public void stop() throws IOException {
         recorder.stop();
         recorder.release();
+        soundId = soundpool.load(path, 1);
     }
 
     public void play() throws IOException {
-        if(firstPlay) {
-            String state = android.os.Environment.getExternalStorageState();
-            if(!state.equals(android.os.Environment.MEDIA_MOUNTED))  {
-                throw new IOException("SD Card is not mounted.  It is " + state + ".");
-            }
-
-            // make sure the directory we plan to store the recording in exists
-            File directory = new File(path).getParentFile();
-            if (!directory.exists() && !directory.mkdirs()) {
-                throw new IOException("Path to file could not be created.");
-            }
-
-            player.setDataSource(path);
-            player.setLooping(true);
-            player.prepare();
-            firstPlay = false;
-        }
-        player.start();
+        streamId = soundpool.play(soundId, volume, volume, 1, -1, 1f);
     }
     
     public int getDuration() {
-        return player.getDuration();
+        return 0; //player.getDuration();
     }
     
     public int getCurrentPosition() {
-        return player.getCurrentPosition();
+        return 0; //player.getCurrentPosition();
     }
 
     public void toggleMute() {
         volume = volume > 0 ? 0.0F : 100.0F;
-        if(player.isPlaying()) {
-            player.setVolume(volume, volume);
-        }
+        soundpool.setVolume(streamId, volume, volume);
     }
 
     public void pause() {
-        player.pause();
+        if(streamId > 0) {
+          soundpool.resume(streamId);
+          soundpool.pause(streamId);
+        }
     }
 
 }

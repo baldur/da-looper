@@ -41,8 +41,9 @@ public final class R {
         public static final int app_name=0x7f050000;
     }
     public static final class style {
+        public static final int MuteButton=0x7f060002;
         public static final int PlayButton=0x7f060001;
         public static final int RecordButton=0x7f060000;
-        public static final int SeekBar=0x7f060002;
+        public static final int SeekBar=0x7f060003;
     }
 }
