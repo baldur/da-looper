@@ -1,14 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="fill_parent"
-             android:layout_height="fill_parent">
-    <TableLayout
+             android:layout_height="fill_parent"
+             android:background="@drawable/wood_veneer"
+             android:id="@+id/container">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/steel_brush"
+        android:layout_margin="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/container">
-    </TableLayout>
+            android:layout_marginBottom="2dp"
+            android:padding="5dp"
+            android:background="@color/black"
+            android:layout_height="wrap_content">
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white1"
+                android:padding="8dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textOn="stop"
+                android:textOff="play"
+                android:background="@drawable/button_black" />
+            <ProgressBar
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_marginRight="5dp"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="@color/white1"
+                android:textOn="unmute"
+                android:textOff="mute"
+                android:background="@drawable/button_black"
+                android:layout_gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:padding="5dp"
+            android:background="@color/black"
+            android:layout_height="wrap_content">
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white1"
+                android:padding="8dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textOn="stop"
+                android:textOff="play"
+                android:background="@drawable/button_black" />
+            <ProgressBar
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_marginRight="5dp"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="@color/white1"
+                android:textOn="unmute"
+                android:textOff="mute"
+                android:background="@drawable/button_black"
+                android:layout_gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:padding="5dp"
+            android:background="@color/black"
+            android:layout_height="wrap_content">
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white1"
+                android:padding="8dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textOn="stop"
+                android:textOff="play"
+                android:background="@drawable/button_black" />
+            <ProgressBar
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_marginRight="5dp"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="@color/white1"
+                android:textOn="unmute"
+                android:textOff="mute"
+                android:background="@drawable/button_black"
+                android:layout_gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:padding="5dp"
+            android:background="@color/black"
+            android:layout_height="wrap_content">
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white1"
+                android:padding="8dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textOn="stop"
+                android:textOff="play"
+                android:background="@drawable/button_black" />
+            <ProgressBar
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_marginRight="5dp"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="@color/white1"
+                android:textOn="unmute"
+                android:textOff="mute"
+                android:background="@drawable/button_black"
+                android:layout_gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_marginBottom="2dp"
+            android:padding="5dp"
+            android:background="@color/black"
+            android:layout_height="wrap_content">
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white1"
+                android:padding="8dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:textOn="stop"
+                android:textOff="play"
+                android:background="@drawable/button_black" />
+            <ProgressBar
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_marginRight="5dp"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="@color/white1"
+                android:textOn="unmute"
+                android:textOff="mute"
+                android:background="@drawable/button_black"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
     <ToggleButton
             style="@style/RecordButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            android:textSize="24dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textOff="Record"
+            android:textOn="Stop Recording"
+            android:background="@drawable/button_black"
             android:id="@+id/record_btn" />
-</FrameLayout>
+</RelativeLayout>
 

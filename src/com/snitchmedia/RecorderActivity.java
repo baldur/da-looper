@@ -1,7 +1,9 @@
 package com.snitchmedia;
 
 import android.app.Activity;
+import android.app.IntentService;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.media.SoundPool.OnLoadCompleteListener;
@@ -22,28 +24,15 @@ import java.util.TimerTask;
 public class RecorderActivity extends Activity {
     private String TAG = "Looper#RecorderActivity";
     private ToggleButton recordBtn;
-    private int recordCount = 0;
-    private String[] fileNames = {"first_file", "second_file", "third_file", "forth_file"};
-    private AudioWrapper[] audioDevices = new AudioWrapper[4];
-    private SoundPool soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
-
-    private boolean startRecording() {
-        Log.v(TAG, "start recording" + fileNames[recordCount]);
-        audioDevices[recordCount] = new AudioWrapper(fileNames[recordCount], soundPool);
-        try {
-            audioDevices[recordCount].record();
-            return true;
-        } catch (IOException e) {
-            return false;
-        }
-    }
+    private static int recordCount = 0;
+    private static String[] fileNames = {"first_file", "second_file", "third_file", "forth_file"};
+    private static AudioWrapper[] audioDevices = new AudioWrapper[4];
+    private static SoundPool soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
 
     private void stopRecording() {
         try {
-             Log.v(TAG, "stop recording" + fileNames[recordCount]);
-             Log.v(TAG, "stop recording" + recordCount);
-             audioDevices[recordCount].stop();
-             recordCount++;
+            audioDevices[recordCount].stop();
+            recordCount++;
         } catch (IOException e) {
 
         }
@@ -66,17 +55,17 @@ public class RecorderActivity extends Activity {
             public void onClick(View v) {
                 ToggleButton btn = (ToggleButton)v;
                 if (btn.isChecked()) {
-                    Log.v(TAG, "start recording fork");
                     if(recordCount >= 4) {
                         Toast.makeText(getApplicationContext(), "Only supports 4 tracks.", Toast.LENGTH_SHORT).show();
                         btn.setChecked(false);
                         return;
                     } else {
                         btn.setEnabled(false);
-                        new InitiateRecording().execute("recording");
+                        Intent intent = new Intent(getApplicationContext(), Recordings.class);
+                        startService(intent);
+                        recordBtn.setEnabled(true);
                     }
                 } else {
-                    Log.v(TAG, "stop recording fork");
                     addRow(recordCount);
                     stopRecording();
                 }
@@ -153,16 +142,24 @@ public class RecorderActivity extends Activity {
         soundPool.release();
     }
 
-    private class InitiateRecording extends AsyncTask<String,String,String> {
-        @Override
-        public String doInBackground(String... track) {
-            startRecording();
-            return "sucess";
+    static public class Recordings extends IntentService {
+        private boolean startRecording() {
+            audioDevices[recordCount] = new AudioWrapper(fileNames[recordCount], soundPool);
+            try {
+                audioDevices[recordCount].record();
+                return true;
+            } catch (IOException e) {
+                return false;
+            }
         }
+
+        public Recordings() {
+            super("Recordings");
+        }
+
         @Override
-        protected void onPostExecute(String results) {
-            recordBtn.setEnabled(true);
-            super.onPostExecute(results);
+        protected void onHandleIntent(Intent intent) {
+            startRecording();
         }
     }
 }

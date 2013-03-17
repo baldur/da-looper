@@ -1,7 +1,11 @@
 package com.snitchmedia;
 
+import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.media.SoundPool;
+import android.net.Uri;
 import android.os.Environment;
 
 import java.io.File;
@@ -13,6 +17,7 @@ public class AudioWrapper {
     private int soundId;
     final SoundPool soundpool;
     final String path;
+    MediaPlayer mp;
     private int streamId = 0;
     private boolean firstPlay = true;
     private float volume = 100.0F;
@@ -65,15 +70,18 @@ public class AudioWrapper {
     }
 
     public void play() throws IOException {
+        //mp = new MediaPlayer();
+        //mp.setDataSource(path);
+        //mp.start();
         streamId = soundpool.play(soundId, volume, volume, 1, -1, 1f);
     }
     
     public int getDuration() {
-        return 0; //player.getDuration();
+        return 0;//mp.getDuration();
     }
     
     public int getCurrentPosition() {
-        return 0; //player.getCurrentPosition();
+        return 0;//mp.getCurrentPosition();
     }
 
     public void toggleMute() {
