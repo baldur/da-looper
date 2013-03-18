@@ -27,26 +27,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8433c093-b84f-4a49-98de-12d4d72a1e12" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java" afterPath="$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/snitchmedia/R.java" afterPath="$PROJECT_DIR$/gen/com/snitchmedia/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java" afterPath="$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/looper.iml" afterPath="$PROJECT_DIR$/looper.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/studio.xml" afterPath="$PROJECT_DIR$/res/layout/studio.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="looper.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363538842170" ignored="false" />
+    <file path="/Dummy.txt" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363543838660" ignored="false" />
     <file path="/recordings.java" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363141661889" ignored="false" />
-    <file path="/RecorderActivity.java" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363146354532" ignored="false" />
-    <file path="/fragment.java" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363146865735" ignored="false" />
+    <file path="/RecorderActivity.java" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363571555724" ignored="false" />
+    <file path="/fragment.java" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363572323042" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363144294930" ignored="false" />
-    <file path="/AudioWrapper.java" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363146909013" ignored="false" />
-    <file path="/studio.xml" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363543155359" ignored="false" />
+    <file path="/AudioWrapper.java" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363572518682" ignored="false" />
+    <file path="/studio.xml" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363548656572" ignored="false" />
+    <file path="/play_button.xml" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363545956252" ignored="false" />
+    <file path="/play_head.xml" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363547046479" ignored="false" />
+    <file path="/mute_button.xml" changelist="8433c093-b84f-4a49-98de-12d4d72a1e12" time="1363547061451" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +90,22 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java" line="88" class="com.snitchmedia.AudioWrapper" package="com.snitchmedia">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -105,34 +115,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AudioWrapper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="19" selection-start="2528" selection-end="2528" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RecorderActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="21" selection-start="1724" selection-end="1724" vertical-scroll-proportion="0.0">
+            <state line="63" column="0" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#1724#2562#0" expanded="true" />
-                <element signature="e#2551#2552#0" expanded="true" />
+                <element signature="e#2740#3453#0" expanded="true" />
+                <element signature="e#3442#3443#0" expanded="true" />
+                <element signature="e#4071#4224#0" expanded="true" />
+                <element signature="e#4213#4214#0" expanded="true" />
+                <element signature="e#4335#4719#0" expanded="true" />
+                <element signature="e#4708#4709#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="studio.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AudioWrapper.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="10" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.5441989">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="studio.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/studio.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="49" selection-start="446" selection-end="446" vertical-scroll-proportion="0.40059346">
+            <state line="7" column="39" selection-start="365" selection-end="365" vertical-scroll-proportion="-1.2">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mute_button.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/mute_button.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="29" selection-start="145" selection-end="145" vertical-scroll-proportion="-1.8">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="play_head.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/play_head.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="30" selection-start="145" selection-end="145" vertical-scroll-proportion="-1.8">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="play_button.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/play_button.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="29" selection-start="145" selection-end="145" vertical-scroll-proportion="-1.8">
               <folding />
             </state>
           </provider>
@@ -195,9 +245,12 @@
         <option value="$PROJECT_DIR$/src/com/snitchmedia/recordings.java" />
         <option value="$PROJECT_DIR$/src/com/snitchmedia/Recordings.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/play_button.xml" />
+        <option value="$PROJECT_DIR$/res/layout/play_head.xml" />
+        <option value="$PROJECT_DIR$/res/layout/mute_button.xml" />
+        <option value="$PROJECT_DIR$/res/layout/studio.xml" />
         <option value="$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java" />
         <option value="$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java" />
-        <option value="$PROJECT_DIR$/res/layout/studio.xml" />
       </list>
     </option>
   </component>
@@ -505,9 +558,9 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.6704918" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.6704918" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32978722" sideWeight="0.6704918" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.6704918" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -515,13 +568,13 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2852459" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6704918" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295082" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295082" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -600,8 +653,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="146" column="0" selection-start="5561" selection-end="5561" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#1724#2562#0" expanded="true" />
-            <element signature="e#2551#2552#0" expanded="true" />
+            <element signature="e#2740#3453#0" expanded="true" />
+            <element signature="e#3442#3443#0" expanded="true" />
+            <element signature="e#4071#4224#0" expanded="true" />
+            <element signature="e#4213#4214#0" expanded="true" />
+            <element signature="e#4335#4719#0" expanded="true" />
+            <element signature="e#4708#4709#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -609,13 +666,6 @@
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="48" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="19" selection-start="2528" selection-end="2528" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -658,13 +708,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/play_button.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="21" selection-start="1724" selection-end="1724" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1724#2562#0" expanded="true" />
-            <element signature="e#2551#2552#0" expanded="true" />
-          </folding>
+        <state line="3" column="29" selection-start="145" selection-end="145" vertical-scroll-proportion="-1.8">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/play_head.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="30" selection-start="145" selection-end="145" vertical-scroll-proportion="-1.8">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -673,7 +733,45 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="49" selection-start="446" selection-end="446" vertical-scroll-proportion="0.40059346">
+        <state line="7" column="39" selection-start="365" selection-end="365" vertical-scroll-proportion="-1.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/mute_button.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="29" selection-start="145" selection-end="145" vertical-scroll-proportion="-1.8">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/sdk/android/sources/android-15/android/media/SoundPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="354" column="29" selection-start="15054" selection-end="15054" vertical-scroll-proportion="0.33247423">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/RecorderActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="0" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2740#3453#0" expanded="true" />
+            <element signature="e#3442#3443#0" expanded="true" />
+            <element signature="e#4071#4224#0" expanded="true" />
+            <element signature="e#4213#4214#0" expanded="true" />
+            <element signature="e#4335#4719#0" expanded="true" />
+            <element signature="e#4708#4709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/snitchmedia/AudioWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="10" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.5441989">
           <folding />
         </state>
       </provider>
