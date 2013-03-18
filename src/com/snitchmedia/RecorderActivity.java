@@ -9,10 +9,13 @@ import android.media.SoundPool.OnLoadCompleteListener;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class RecorderActivity extends Activity {
     private String TAG = "Looper#RecorderActivity";
@@ -122,6 +125,13 @@ public class RecorderActivity extends Activity {
 
         ToggleButton muteBtn = (ToggleButton) channelRow.findViewById(R.id.muteBtn);
         muteBtn.setOnClickListener(createMuteListener(device));
+
+        ProgressBar playHead = (ProgressBar) channelRow.findViewById(R.id.playHead);
+        Timer timer = new Timer();
+        UpdatePlayHead uph = new UpdatePlayHead();
+        uph.setPlayHead(playHead);
+        uph.setDevice(device);
+        timer.schedule(uph, 100, 200);
     }
 
     private View.OnClickListener createMuteListener(final AudioWrapper device) {
@@ -147,5 +157,20 @@ public class RecorderActivity extends Activity {
                 }
             }
         };
+    }
+
+    class UpdatePlayHead extends TimerTask {
+        ProgressBar playHead;
+        AudioWrapper device;
+
+        public void setPlayHead(ProgressBar pb) {
+            playHead = pb;
+        }
+        public void setDevice(AudioWrapper am) {
+            device = am;
+        }
+        public void run() {
+            playHead.setProgress(device.getProgress());
+        }
     }
 }

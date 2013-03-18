@@ -1,11 +1,8 @@
 package com.snitchmedia;
 
-import android.content.Context;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.media.SoundPool;
-import android.net.Uri;
 import android.os.Environment;
 
 import java.io.File;
@@ -17,7 +14,7 @@ public class AudioWrapper {
     private int soundId;
     final SoundPool soundpool;
     final String path;
-    MediaPlayer mp;
+    MediaPlayer mediaPlayer;
     private int streamId = 0;
     private boolean firstPlay = true;
     private float volume = 100.0F;
@@ -70,30 +67,43 @@ public class AudioWrapper {
     }
 
     public void play() throws IOException {
-        //mp = new MediaPlayer();
-        //mp.setDataSource(path);
-        //mp.start();
-        streamId = soundpool.play(soundId, volume, volume, 1, -1, 1f);
+        if (mediaPlayer == null) {
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.setDataSource(path);
+            mediaPlayer.prepare();
+            mediaPlayer.setLooping(true);
+            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    mp.start();
+                }
+            });
+        } else {
+            mediaPlayer.start();
+        }
     }
     
-    public int getDuration() {
-        return 0;//mp.getDuration();
+    public float getDuration() {
+        return mediaPlayer != null ? (float)mediaPlayer.getDuration() : 0;
     }
     
-    public int getCurrentPosition() {
-        return 0;//mp.getCurrentPosition();
+    public float getCurrentPosition() {
+        return mediaPlayer != null ? (float)mediaPlayer.getCurrentPosition() : 0;
+    }
+
+    public int getProgress() {
+        float duration = getDuration();
+        float position = getCurrentPosition();
+        return Math.round(position/duration * 100);
     }
 
     public void toggleMute() {
         volume = volume > 0 ? 0.0F : 1.0F;
-        soundpool.setVolume(streamId, volume, volume);
+        mediaPlayer.setVolume(volume, volume);
     }
 
     public void pause() {
-        if(streamId > 0) {
-          soundpool.resume(streamId);
-          soundpool.pause(streamId);
-        }
+        mediaPlayer.pause();
     }
 
 }
