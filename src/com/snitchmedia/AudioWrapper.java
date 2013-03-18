@@ -7,6 +7,7 @@ import android.os.Environment;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 public class AudioWrapper {
 
@@ -18,13 +19,26 @@ public class AudioWrapper {
     private int streamId = 0;
     private boolean firstPlay = true;
     private float volume = 100.0F;
+    public static int MAX_LENGTH = 100;
 
     /**
      * Creates a new audio recording at the given path (relative to root of SD card).
      */
-    public AudioWrapper(String path, SoundPool soundPool) {
-        this.path = sanitizePath(path);
-        this.soundpool = soundPool;
+    public AudioWrapper(SoundPool soundPool) {
+       this.path = generateFileName();
+       this.soundpool = soundPool;
+    }
+
+    private String generateFileName() {
+        Random generator = new Random();
+        StringBuilder randomStringBuilder = new StringBuilder();
+        int randomLength = generator.nextInt(MAX_LENGTH);
+        char tempChar;
+        for (int i = 0; i < randomLength; i++){
+            tempChar = (char) (generator.nextInt(96) + 32);
+            randomStringBuilder.append(tempChar);
+        }
+        return sanitizePath(randomStringBuilder.toString());
     }
 
     private String sanitizePath(String path) {

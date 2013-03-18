@@ -21,8 +21,7 @@ public class RecorderActivity extends Activity {
     private String TAG = "Looper#RecorderActivity";
     private ToggleButton recordBtn;
     private static int recordCount = 0;
-    private static String[] fileNames = {"first_file", "second_file", "third_file", "forth_file"};
-    private static AudioWrapper[] audioDevices = new AudioWrapper[4];
+    private static AudioWrapper[] audioDevices = new AudioWrapper[5];
     private int[] channelRowViews = {
         R.id.row_1,
         R.id.row_2,
@@ -30,7 +29,7 @@ public class RecorderActivity extends Activity {
         R.id.row_4,
         R.id.row_5
     };
-    private static SoundPool soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
+    private static SoundPool soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
 
     private void stopRecording() {
         try {
@@ -64,7 +63,7 @@ public class RecorderActivity extends Activity {
 
     static public class Recordings extends IntentService {
         private boolean startRecording() {
-            audioDevices[recordCount] = new AudioWrapper(fileNames[recordCount], soundPool);
+            audioDevices[recordCount] = new AudioWrapper(soundPool);
             try {
                 audioDevices[recordCount].record();
                 return true;
@@ -98,7 +97,7 @@ public class RecorderActivity extends Activity {
             public void onClick(View v) {
                 ToggleButton btn = (ToggleButton)v;
                 if (btn.isChecked()) {
-                    if(recordCount >= 4) {
+                    if(recordCount >= 5) {
                         btn.setChecked(false);
                         return;
                     } else {
@@ -118,6 +117,7 @@ public class RecorderActivity extends Activity {
 
     private void initButtons() {
         View channelRow = findViewById(channelRowViews[recordCount-1]);
+        channelRow.setVisibility(View.VISIBLE);
         final AudioWrapper device = audioDevices[recordCount-1];
 
         ToggleButton toggleBtn = (ToggleButton)channelRow.findViewById(R.id.playBtn);

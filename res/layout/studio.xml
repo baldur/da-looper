@@ -13,6 +13,7 @@
         android:layout_height="wrap_content">
         <LinearLayout
             android:id="@+id/row_1"
+            android:visibility="invisible"
             android:layout_width="fill_parent"
             android:layout_marginBottom="2dp"
             android:padding="5dp"
@@ -24,6 +25,7 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/row_2"
+            android:visibility="invisible"
             android:layout_width="fill_parent"
             android:layout_marginBottom="2dp"
             android:padding="5dp"
@@ -35,6 +37,7 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/row_3"
+            android:visibility="invisible"
             android:layout_width="fill_parent"
             android:layout_marginBottom="2dp"
             android:padding="5dp"
@@ -46,6 +49,7 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/row_4"
+            android:visibility="invisible"
             android:layout_width="fill_parent"
             android:layout_marginBottom="2dp"
             android:padding="5dp"
@@ -57,6 +61,7 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/row_5"
+            android:visibility="invisible"
             android:layout_width="fill_parent"
             android:layout_marginBottom="2dp"
             android:padding="5dp"
