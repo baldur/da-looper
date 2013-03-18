@@ -22,6 +22,7 @@ public class RecorderActivity extends Activity {
     private ToggleButton recordBtn;
     private static int recordCount = 0;
     private static AudioWrapper[] audioDevices = new AudioWrapper[5];
+    private Timer[] timers = new Timer[5];
     private int[] channelRowViews = {
         R.id.row_1,
         R.id.row_2,
@@ -63,6 +64,10 @@ public class RecorderActivity extends Activity {
 
     static public class Recordings extends IntentService {
         private boolean startRecording() {
+            if (audioDevices[recordCount] != null) {
+                audioDevices[recordCount].trash();
+                audioDevices[recordCount] = null;
+            }
             audioDevices[recordCount] = new AudioWrapper(soundPool);
             try {
                 audioDevices[recordCount].record();
@@ -98,14 +103,17 @@ public class RecorderActivity extends Activity {
                 ToggleButton btn = (ToggleButton)v;
                 if (btn.isChecked()) {
                     if(recordCount >= 5) {
-                        btn.setChecked(false);
-                        return;
-                    } else {
-                        btn.setEnabled(false);
-                        Intent intent = new Intent(getApplicationContext(), Recordings.class);
-                        startService(intent);
-                        recordBtn.setEnabled(true);
+                        recordCount = 0;
                     }
+                    if (timers[recordCount] != null) {
+                        timers[recordCount].cancel();
+                        timers[recordCount].purge();
+                        timers[recordCount] = null;
+                    }
+                    btn.setEnabled(false);
+                    Intent intent = new Intent(getApplicationContext(), Recordings.class);
+                    startService(intent);
+                    recordBtn.setEnabled(true);
                 } else {
                     stopRecording();
                     initButtons();
@@ -121,17 +129,19 @@ public class RecorderActivity extends Activity {
         final AudioWrapper device = audioDevices[recordCount-1];
 
         ToggleButton toggleBtn = (ToggleButton)channelRow.findViewById(R.id.playBtn);
+        toggleBtn.setChecked(false);
         toggleBtn.setOnClickListener(createPlayToggleListener(device));
 
         ToggleButton muteBtn = (ToggleButton) channelRow.findViewById(R.id.muteBtn);
+        muteBtn.setChecked(false);
         muteBtn.setOnClickListener(createMuteListener(device));
 
         ProgressBar playHead = (ProgressBar) channelRow.findViewById(R.id.playHead);
-        Timer timer = new Timer();
+        timers[recordCount-1] = new Timer();
         UpdatePlayHead uph = new UpdatePlayHead();
         uph.setPlayHead(playHead);
         uph.setDevice(device);
-        timer.schedule(uph, 100, 200);
+        timers[recordCount-1].schedule(uph, 100, 200);
     }
 
     private View.OnClickListener createMuteListener(final AudioWrapper device) {
@@ -170,7 +180,12 @@ public class RecorderActivity extends Activity {
             device = am;
         }
         public void run() {
-            playHead.setProgress(device.getProgress());
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    playHead.setProgress(device.getProgress());
+                }
+            });
         }
     }
 }

@@ -16,8 +16,6 @@ public class AudioWrapper {
     final SoundPool soundpool;
     final String path;
     MediaPlayer mediaPlayer;
-    private int streamId = 0;
-    private boolean firstPlay = true;
     private float volume = 100.0F;
     public static int MAX_LENGTH = 100;
 
@@ -49,6 +47,14 @@ public class AudioWrapper {
             path += ".3gp";
         }
         return Environment.getExternalStorageDirectory().getAbsolutePath() + path;
+    }
+
+    public void trash() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+        }
+        soundpool.release();
     }
 
     /**
@@ -113,7 +119,9 @@ public class AudioWrapper {
 
     public void toggleMute() {
         volume = volume > 0 ? 0.0F : 1.0F;
-        mediaPlayer.setVolume(volume, volume);
+        if(mediaPlayer != null) {
+            mediaPlayer.setVolume(volume, volume);
+        }
     }
 
     public void pause() {
