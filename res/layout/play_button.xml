@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ToggleButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/playBtn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white1"
+    android:padding="8dp"
+    android:layout_marginRight="5dp"
+    android:layout_gravity="center"
+    android:textOn="stop"
+    android:textOff="play"
+    android:background="@drawable/button_black"/>

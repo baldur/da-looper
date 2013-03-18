@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ToggleButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/muteBtn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:textColor="@color/white1"
+    android:textOn="unmute"
+    android:textOff="mute"
+    android:background="@drawable/button_black"
+    android:layout_gravity="center"/>

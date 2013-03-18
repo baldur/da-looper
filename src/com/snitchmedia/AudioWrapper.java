@@ -85,7 +85,7 @@ public class AudioWrapper {
     }
 
     public void toggleMute() {
-        volume = volume > 0 ? 0.0F : 100.0F;
+        volume = volume > 0 ? 0.0F : 1.0F;
         soundpool.setVolume(streamId, volume, volume);
     }
 
